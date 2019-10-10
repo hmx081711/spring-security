@@ -32,7 +32,7 @@ public class TimeInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         Long start = (Long) request.getAttribute("start");
-        System.out.println(((Exception)ex).getClass().getSimpleName());
+        //System.out.println(((Exception)ex).getClass().getSimpleName());
         System.out.println("time interceptor 耗时:" + (new Date().getTime() - start));
         System.out.println("time interceptor finished");
     }

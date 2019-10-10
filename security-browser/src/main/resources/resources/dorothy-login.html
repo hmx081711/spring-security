@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单登录</title>
+</head>
+<body>
+<h1>标准的表单登录</h1>
+<h2>表单登录</h2>
+<form action="/authentication/login" method="post">
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" placeholder="请输入用户名" name="username"/></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" placeholder="请输入密码" name="password"></td>
+        </tr>
+        <tr>
+            <td>图形验证码:</td>
+            <td><input type="text" name="imageCode"></td>
+            <td colspan="2"><img src="/image/code"></td>
+        </tr>
+        <tr>
+            <td><a href="/qqLogin/callback.do">qq登陆</a></td>
+        </tr>
+    </table>
+    <p><input type="submit" value="登录"/></p>
+    <input type="checkbox" name="remember-me">记住我
+</form>
+</body>
+</html>

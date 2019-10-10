@@ -5,9 +5,34 @@ spring:
     username: root
     password: Top2283098554
 
+  security:
+    imageCode:
+      width: 150
+      heigth: 440
+      length: 4
+      expireIn: 100
+#      urls: /demo/user,/demo/user/*
+
   session:
     store-type: none
 
 security:
   basic:
-    enabled: false
+    enabled: true
+
+#com:
+#  dorothy:
+#    browser:
+#      loginPage: /browser-login.html
+com:
+  dorothy:
+    browser:
+      loginType: JSON
+
+    social:
+      qq:
+        appId: 100550231
+        appSecret:
+        providerId: callback.do
+
+      qqProcessUrl: /qqLogin

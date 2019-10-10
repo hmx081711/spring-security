@@ -3,10 +3,12 @@ package com.dorothy;
 import com.dorothy.domain.FileInfo;
 import com.dorothy.domain.User;
 import com.dorothy.error.UserNotExistException;
+import com.dorothy.security.properties.SecurityProperties;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.apache.commons.io.IOUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +24,7 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController
+@RequestMapping("/demo")
 public class DemoApplication {
 
     public static void main(String[] args) {
@@ -111,7 +114,7 @@ public class DemoApplication {
     }
 
     @GetMapping("/{id}")
-    public void fileDownLoad(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void fileDownLoad(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         try (
                 InputStream inputStream = new FileInputStream(new File(folder, id + ".txt"));
